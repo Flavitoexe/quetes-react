@@ -4,18 +4,32 @@ import PokemonCard from './components/PokemonCard'
 
 const pokemonList = [
   {
-    name: "Bulbasaur",
+    name: "bulbasaur",
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
   },
   {
-    name: "Mew",
+    name: "charmander",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  },
+  {
+    name: "squirtle",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+  {
+    name: "pikachu",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+  },
+  {
+    name: "mew",
   },
 ]
 
 function App() {
-
-  const [pokemonName, setPokemonName] = useState("Bulbasaur")
+  const [pokemonName, setPokemonName] = useState("bulbasaur")
 
   const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName)
   if (pokemon == null) {
@@ -24,8 +38,11 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => setPokemonName("Bulbasaur")}>Bulbasaur</button>
-      <button onClick={() => setPokemonName("Mew")}>Mew</button>
+      <nav>
+        {pokemonList.map ((pokemon) => (
+          <button onClick={() => setPokemonName(pokemon.name)}>{pokemon.name}</button>
+        ))}
+      </nav>
       <PokemonCard pokemon={pokemon} />
     </div>
   )
