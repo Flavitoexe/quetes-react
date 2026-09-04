@@ -5,10 +5,13 @@ interface PokemonProps {
 
 interface NavBarProps {
     pokemonList: PokemonProps[],
-    setPokemonName: (name: string) => void
+    setPokemonName: (name: string) => void,
+    pokemonName: string
 }
 
-function NavBar({pokemonList, setPokemonName}: NavBarProps) {
+function NavBar({pokemonList, setPokemonName, pokemonName}: NavBarProps) {
+    if (pokemonName === "pikachu") alert("pika pikachu !!!")
+        
     return (
         <nav>
             {pokemonList.map ((pokemon) => (
