@@ -1,0 +1,15 @@
+.card {
+    /* background-color: red; */
+    padding: 10px;
+    width: min-content;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(14, 14, 14);
+}
+
+.card-image {
+    background-color: white;
+    width: 250px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #8a8a8a;
+}
